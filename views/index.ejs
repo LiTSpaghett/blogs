@@ -1,0 +1,31 @@
+<%- include('partials/header.ejs') %>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Chào mừng đến với Blog của tôi</h1>
+            <p>Khám phá những câu chuyện thú vị và kiến thức bổ ích</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="blog-grid">
+            <% posts.forEach((post)=>{ %>
+            <article class="blog-card">
+                <div class="blog-image">📱</div>
+                <div class="blog-content">
+                    <span class="blog-category"> <%= post.category%> </span>
+                    <h2 class="blog-title"><%= post.title%></h2>
+                    <p class="blog-excerpt"><%= post.summary%></p>
+                    <div class="blog-meta">
+                        <span>14 Tháng 10, 2025</span>
+                        <a href="/detail/<%= posts.indexOf(post) %>" class="read-more">Đọc thêm →</a>
+                    </div>
+                </div>
+            </article>
+            <% }); %>
+
+
+        </div>
+    </main>
+
+<%- include('partials/footer.ejs') %>

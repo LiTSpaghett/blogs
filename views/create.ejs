@@ -1,0 +1,81 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="container">
+        <div class="form-container">
+            <% if(locals.postId){ %>
+                <h2>Chỉnh sửa</h2>
+                <form action="/update/<%= postId %>" method="post">
+                <div class="form-group">
+                    <label for="postTitle">Tiêu đề *</label>
+                    <textarea type="text" id="postTitle" name="title" required><%= post.title %></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="postCategory">Danh mục *</label>
+                    <select id="postCategory" name="category" required>
+                        <option value="">Chọn danh mục</option>
+                        <option value="tech"      <%= post?.category === 'tech' ? 'selected' : '' %> >🧩 Công nghệ</option>
+                        <option value="design"    <%= post?.category === 'design' ? 'selected' : '' %> >🎨 Thiết kế</option>
+                        <option value="startup"   <%= post?.category === 'startup' ? 'selected' : '' %> >🚀 Khởi nghiệp</option>
+                        <option value="education" <%= post?.category === 'education' ? 'selected' : '' %> >📚 Giáo dục</option>
+                        <option value="travel"    <%= post?.category === 'travel' ? 'selected' : '' %> >🌍 Du lịch</option>
+                        <option value="creative"  <%= post?.category === 'creative' ? 'selected' : '' %> >💡 Sáng tạo</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="postExcerpt">Mô tả ngắn *</label>
+                    <textarea id="postExcerpt" name="summary" required  style="min-height: 100px;"><%= post.summary %></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="postContent">Nội dung *</label>
+                    <textarea id="postContent" name="content" required ><%= post.content %></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Chỉnh sửa</button>
+                    <a href="/" class="btn btn-secondary">Hủy</a>
+                </div>
+            </form>
+            <% } else{%>
+            <h2>Tạo bài viết mới</h2>
+            <form action="/save" method="post">
+                <div class="form-group">
+                    <label for="postTitle">Tiêu đề *</label>
+                    <input type="text" id="postTitle" name="title" required placeholder="Nhập tiêu đề bài viết">
+                </div>
+
+                <div class="form-group">
+                    <label for="postCategory">Danh mục *</label>
+                    <select id="postCategory" name="category" required>
+                        <option value="">Chọn danh mục</option>
+                        <option value="tech">📱 Công nghệ</option>
+                        <option value="design">🎨 Thiết kế</option>
+                        <option value="startup">🚀 Khởi nghiệp</option>
+                        <option value="education">📚 Giáo dục</option>
+                        <option value="travel">🌍 Du lịch</option>
+                        <option value="creative">💡 Sáng tạo</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="postExcerpt">Mô tả ngắn *</label>
+                    <textarea id="postExcerpt" name="summary" required placeholder="Viết mô tả ngắn về bài viết (khoảng 1-2 câu)" style="min-height: 100px;"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="postContent">Nội dung *</label>
+                    <textarea id="postContent" name="content" required placeholder="Viết nội dung bài viết của bạn..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Đăng bài</button>
+                    <a href="/" class="btn btn-secondary">Hủy</a>
+                </div>
+            </form>
+            <% } %>
+        </div>
+    </div>
+
+<%- include('partials/footer.ejs') %>

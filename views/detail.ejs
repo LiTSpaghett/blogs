@@ -1,0 +1,50 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="container">
+        <div class="post-detail">
+            <div class="post-header">
+                <h1>Xu hướng công nghệ 2025</h1>
+                <span class="blog-category">Công nghệ</span>
+                <div class="post-meta-info">
+                    <span>📅 14 Tháng 10, 2025</span>
+                    <span>👤 Tác giả: Admin</span>
+                    <span>⏱️ 5 phút đọc</span>
+                </div>
+                <div class="post-actions">
+                    <a href="/" class="btn btn-back">← Quay lại</a>
+                    <a href="/edit/<%= postId %>" class="btn btn-edit">✏️ Chỉnh sửa</a>
+                    <form action="/delete/<%= postId %>" method="post">
+                    <button class="btn btn-delete" type="submit">🗑️ Xóa</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="post-image-large">📱</div>
+
+            <div class="post-content">
+                <p style="font-weight: 600; font-size: 1.2rem; color: #666;">
+                    Khám phá những xu hướng công nghệ mới nhất đang định hình tương lai của chúng ta...
+                <!-- </p>
+                
+                <p>
+                    Năm 2025 đánh dấu một bước ngoặt quan trọng trong sự phát triển công nghệ. AI và machine learning đã trở thành một phần không thể thiếu trong cuộc sống hàng ngày. Từ các trợ lý ảo thông minh đến xe tự lái, công nghệ đang thay đổi cách chúng ta sống và làm việc.
+                </p>
+                
+                <p>
+                    Đặc biệt, công nghệ blockchain và Web3 đang mở ra những cơ hội mới cho tương lai internet phi tập trung. Metaverse không còn là khái niệm xa vời mà đang dần trở thành hiện thực với các ứng dụng thực tế trong giáo dục, làm việc và giải trí.
+                </p>
+                
+                <p>
+                    Công nghệ xanh và năng lượng tái tạo cũng đang nhận được sự quan tâm đặc biệt. Các giải pháp công nghệ bền vững không chỉ giúp bảo vệ môi trường mà còn mang lại hiệu quả kinh tế cao cho doanh nghiệp.
+                </p> -->
+                
+                <p>
+                    <%= post.content %>
+                </p>
+            </div>
+        </div>
+    </div>
+
+<%- include('partials/footer.ejs') %>
+    
+
