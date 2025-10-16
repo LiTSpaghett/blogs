@@ -78,8 +78,8 @@ app.post("/update/:id", (req, res) => {
     res.redirect("/");
 });
 
-app.listen(port, () => {
+app.listen(PORT, () => {
     addPost("Chào mừng đến với blog của tôi", "Đây là bài viết đầu tiên trên blog của tôi. Tôi rất vui khi bạn ghé thăm!", "tech","Bài viết giới thiệu về blog.");
     addPost("Chào mừng đến với blog của tôi", "Đádsdsdsd. Tôi rất vui khi bạn ghé thăm!", "design","Bài viết giới thiệu về blog.");
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${PORT}`);
 });
